@@ -1,0 +1,81 @@
+{
+  "viewport": [
+    844,
+    390
+  ],
+  "document": [
+    844,
+    390
+  ],
+  "commandBar": {
+    "x": 0,
+    "y": 304,
+    "right": 844,
+    "bottom": 390,
+    "width": 844,
+    "height": 86
+  },
+  "signal": {
+    "x": 429.5625,
+    "y": 279.40625,
+    "right": 588,
+    "bottom": 295,
+    "width": 158.4375,
+    "height": 15.59375
+  },
+  "signalText": "0/540 signal · Enemy 0",
+  "cameraButtons": [
+    {
+      "x": 294,
+      "y": 72,
+      "right": 332,
+      "bottom": 112,
+      "width": 38,
+      "height": 40
+    },
+    {
+      "x": 336,
+      "y": 72,
+      "right": 374,
+      "bottom": 112,
+      "width": 38,
+      "height": 40
+    },
+    {
+      "x": 378,
+      "y": 72,
+      "right": 416,
+      "bottom": 112,
+      "width": 38,
+      "height": 40
+    }
+  ],
+  "uplinkButtons": [
+    {
+      "x": 422.359375,
+      "y": 72,
+      "right": 474.90625,
+      "bottom": 130,
+      "width": 52.546875,
+      "height": 58
+    },
+    {
+      "x": 480.90625,
+      "y": 72,
+      "right": 533.453125,
+      "bottom": 130,
+      "width": 52.546875,
+      "height": 58
+    },
+    {
+      "x": 539.453125,
+      "y": 72,
+      "right": 592,
+      "bottom": 130,
+      "width": 52.546875,
+      "height": 58
+    }
+  ],
+  "overlap": false,
+  "fonts": true
+}

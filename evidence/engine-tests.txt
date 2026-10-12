@@ -1,0 +1,39 @@
+
+> pepefront@1.0.0 test
+> node --experimental-strip-types --test tests/engine.test.mjs
+
+✔ seeded terrain randomness is reproducible (5.042931ms)
+✔ duel, allied front and FFA have the correct teams (25.730617ms)
+✔ factions have distinct health, cost, speed and opening armies (3.169274ms)
+✔ prerequisites and invalid placement do not charge crystals (2.139984ms)
+✔ construction charges once, takes time and unlocks the next tier (54.829731ms)
+✔ harvesters make repeated real crystal deposits without orders (242.087639ms)
+✔ production uses resources and spawns a real unit after its duration (9.463591ms)
+✔ canceling production refunds the exact faction-adjusted cost (6.26473ms)
+✔ low power slows production to 40 percent (12.440396ms)
+✔ pathfinding routes around ruins and occupied building cells (2.975362ms)
+✔ movement is stable across different timestep sizes (7.215465ms)
+✔ queued orders are kept and are completed in sequence (14.496262ms)
+✔ orders cannot seize control of enemy units (2.018275ms)
+✔ fog reveals friendly surroundings, hides enemies and remembers exploration (1.55891ms)
+✔ Cult commandos cloak outside detection range until they fire (1.33992ms)
+✔ engineers repair friendly completed structures (11.486787ms)
+✔ uncontested uplinks capture, contested uplinks stop capture (73.962974ms)
+✔ rank and signal lab bonuses increase actual damage (33.420076ms)
+✔ HQ destruction produces victory, finite score and stops simulation (45.892863ms)
+✔ HQ loss produces defeat and no negative score (3.735391ms)
+✔ holding uplinks can win without base destruction (1.546566ms)
+✔ team signal is shared and an allied signal victory counts (53.893904ms)
+✔ twelve minute match limit resolves a match (1.349849ms)
+✔ pause freezes resource, production, movement and match clocks (6.159174ms)
+✔ AI builds tech, trains an army and makes offensive orders (867.357149ms)
+✔ construction cannot trap a Pepe inside a new foundation (1.475823ms)
+✔ invalid or backward clock deltas never rewind or poison the simulation (2.741986ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1849.320557

@@ -1,0 +1,9 @@
+# Path budget: 512 bytes maximum for this file; generated dependencies/caches only.
+**/node_modules/
+**/.npm/
+**/.vite/
+**/.cache/
+**/coverage/
+**/playwright-report/
+**/test-results/
+test/scratch/

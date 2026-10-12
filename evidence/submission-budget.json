@@ -1,0 +1,255 @@
+{
+  "status": "pass",
+  "budgetBytes": 8388608,
+  "totalBytes": 2008346,
+  "fileCount": 60,
+  "method": "Uncompressed intended submission files including this report; conservative payload estimate, not a generated Git pack. Git internals are not read or modified.",
+  "excluded": [
+    "Provided environment inputs: .git/, .imd/, .agents/, .aws/, .codex/",
+    "All nested generated dependency/cache/report directories listed in .gitignore",
+    "Disposable test/scratch/"
+  ],
+  "ignoreFileBudgetBytes": 512,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 197
+    },
+    {
+      "path": "ART.md",
+      "bytes": 2750
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 11642
+    },
+    {
+      "path": "dist/assets/commander.webp",
+      "bytes": 186920
+    },
+    {
+      "path": "dist/assets/FONT-LICENSE.txt",
+      "bytes": 4377
+    },
+    {
+      "path": "dist/assets/index-WXo_PyN-.js",
+      "bytes": 236899
+    },
+    {
+      "path": "dist/cover.jpg",
+      "bytes": 165518
+    },
+    {
+      "path": "dist/favicon.svg",
+      "bytes": 386
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 1078
+    },
+    {
+      "path": "dist/pepe-game.json",
+      "bytes": 1302
+    },
+    {
+      "path": "evidence/briefing.jpg",
+      "bytes": 88702
+    },
+    {
+      "path": "evidence/browser-output.txt",
+      "bytes": 2422
+    },
+    {
+      "path": "evidence/browser-results.json",
+      "bytes": 4874
+    },
+    {
+      "path": "evidence/build.txt",
+      "bytes": 442
+    },
+    {
+      "path": "evidence/contrast-measurements.json",
+      "bytes": 667
+    },
+    {
+      "path": "evidence/dependency-audit.txt",
+      "bytes": 24
+    },
+    {
+      "path": "evidence/desktop-battle.jpg",
+      "bytes": 114367
+    },
+    {
+      "path": "evidence/desktop-lobby.jpg",
+      "bytes": 162553
+    },
+    {
+      "path": "evidence/engine-tests.txt",
+      "bytes": 2195
+    },
+    {
+      "path": "evidence/export-check.txt",
+      "bytes": 721
+    },
+    {
+      "path": "evidence/landscape-battle.jpg",
+      "bytes": 63335
+    },
+    {
+      "path": "evidence/landscape-layout.json",
+      "bytes": 1262
+    },
+    {
+      "path": "evidence/mobile-battle.jpg",
+      "bytes": 46741
+    },
+    {
+      "path": "evidence/mobile-lobby.jpg",
+      "bytes": 57427
+    },
+    {
+      "path": "evidence/runtime-integrity.json",
+      "bytes": 1406
+    },
+    {
+      "path": "evidence/sandbox-defeat.jpg",
+      "bytes": 46632
+    },
+    {
+      "path": "evidence/submission-budget.json",
+      "bytes": 4887
+    },
+    {
+      "path": "evidence/typecheck.txt",
+      "bytes": 45
+    },
+    {
+      "path": "evidence/victory.jpg",
+      "bytes": 52694
+    },
+    {
+      "path": "index.html",
+      "bytes": 1073
+    },
+    {
+      "path": "licenses/BETTER-INTERFACE-LICENSE.txt",
+      "bytes": 11964
+    },
+    {
+      "path": "licenses/NOTICE.md",
+      "bytes": 1453
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 37852
+    },
+    {
+      "path": "package.json",
+      "bytes": 627
+    },
+    {
+      "path": "public/assets/commander.webp",
+      "bytes": 186920
+    },
+    {
+      "path": "public/assets/FONT-LICENSE.txt",
+      "bytes": 4377
+    },
+    {
+      "path": "public/cover.jpg",
+      "bytes": 165518
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 386
+    },
+    {
+      "path": "public/pepe-game.json",
+      "bytes": 1302
+    },
+    {
+      "path": "README.md",
+      "bytes": 11492
+    },
+    {
+      "path": "scripts/check-export.mjs",
+      "bytes": 2555
+    },
+    {
+      "path": "scripts/check-submission.mjs",
+      "bytes": 2929
+    },
+    {
+      "path": "scripts/cover.mjs",
+      "bytes": 2458
+    },
+    {
+      "path": "scripts/finalize-export.mjs",
+      "bytes": 639
+    },
+    {
+      "path": "src/assets/barlow-400.woff2",
+      "bytes": 22196
+    },
+    {
+      "path": "src/assets/barlow-600.woff2",
+      "bytes": 22772
+    },
+    {
+      "path": "src/assets/barlow-condensed-700.woff2",
+      "bytes": 22444
+    },
+    {
+      "path": "src/assets/barlow-condensed-800.woff2",
+      "bytes": 22464
+    },
+    {
+      "path": "src/audio.ts",
+      "bytes": 4240
+    },
+    {
+      "path": "src/bridge.ts",
+      "bytes": 1067
+    },
+    {
+      "path": "src/game.ts",
+      "bytes": 40308
+    },
+    {
+      "path": "src/icons.ts",
+      "bytes": 2026
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 52364
+    },
+    {
+      "path": "src/render.ts",
+      "bytes": 29661
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 48150
+    },
+    {
+      "path": "tests/browser.mjs",
+      "bytes": 22787
+    },
+    {
+      "path": "tests/engine.test.mjs",
+      "bytes": 10019
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 381
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 13256
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 201
+    }
+  ]
+}

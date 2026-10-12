@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "pepe-browser-game/1",
+  "title": "PEPEFRONT",
+  "version": "1.0.0",
+  "summary": "Command the night. Build your base, harvest crystals, and lead your Pepes in a neon-noir RTS.",
+  "description": "An original, complete single-player real-time strategy game. Choose tough Initiative Pepes or fast, stealthy Cult Pepes. Fight local AI in 1v1, 2v2, or four-way skirmishes. Harvest crystals, manage power, build an army, and capture three uplinks or destroy enemy command centers. Includes briefings, three AI difficulties, fog of war, ranks, touch controls, pause, sound, and instant replay. Matches target 5–12 minutes. No account, wallet, network service, or persistent storage required.",
+  "controls": "Click selects; drag selects a squad; right-click moves/attacks; Shift queues; double-click selects matching job/rank; Ctrl+1–9 assigns groups, 1–9 recalls. WASD/edges/middle drag pan; wheel zooms. B/F base/army; Q/E/R/T/G build/train; X selects army; Enter orders to center; Z cycles units; Space alert; P pause. Touch: tap selects, drag pans; Select army, Order, then tap; Build base/Train army/Minimap open panels. Choose a building, tap location, then Place.",
+  "genre": "strategy",
+  "players": 1,
+  "mobile": true,
+  "entry": "index.html",
+  "cover": "cover.jpg"
+}

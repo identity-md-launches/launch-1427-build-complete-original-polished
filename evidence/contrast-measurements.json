@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Deploy text",
+    "foreground": "rgb(18, 32, 11)",
+    "background": "rgb(186, 250, 71)",
+    "ratio": 13.62
+  },
+  {
+    "name": "Faction text",
+    "foreground": "rgb(232, 237, 223)",
+    "background": "rgb(26, 36, 22)",
+    "ratio": 13.47
+  },
+  {
+    "name": "Faction secondary",
+    "foreground": "rgb(172, 185, 165)",
+    "background": "rgb(26, 36, 22)",
+    "ratio": 7.83
+  },
+  {
+    "name": "Rules select",
+    "foreground": "rgb(232, 237, 223)",
+    "background": "rgb(18, 27, 23)",
+    "ratio": 14.74
+  },
+  {
+    "name": "Footer text",
+    "foreground": "rgb(132, 147, 126)",
+    "background": "rgb(11, 16, 15)",
+    "ratio": 5.89
+  }
+]

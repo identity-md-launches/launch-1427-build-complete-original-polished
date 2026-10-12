@@ -1,0 +1,21 @@
+{
+  "name": "pepefront",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build && node scripts/finalize-export.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --experimental-strip-types --test tests/engine.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "check:export": "node scripts/check-export.mjs",
+    "check:submission": "node scripts/check-submission.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  }
+}

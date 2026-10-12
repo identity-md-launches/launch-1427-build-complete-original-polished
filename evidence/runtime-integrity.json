@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "checkedAt": "2026-10-12T15:41:54.820Z",
+  "localDocumentationLinks": 38,
+  "lockfileDependenciesMatch": true,
+  "runtimeAssets": [
+    {
+      "path": "dist/assets/FONT-LICENSE.txt",
+      "bytes": 4377,
+      "sha256": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f"
+    },
+    {
+      "path": "dist/assets/commander.webp",
+      "bytes": 186920,
+      "sha256": "b3d9776e82e0b293b1fdd1751466b9923e4e878d55af324063a8e487bd6ab0d1"
+    },
+    {
+      "path": "dist/assets/index-WXo_PyN-.js",
+      "bytes": 236899,
+      "sha256": "6499d9d5112d62f400129135084626ce3562e357037da8b02ab61e1519a59808"
+    },
+    {
+      "path": "dist/cover.jpg",
+      "bytes": 165518,
+      "sha256": "5e38e7c6550f84ba8fb9b3eb0b03b74c2f83b2db7f1af8f5087193c99f39b438"
+    },
+    {
+      "path": "dist/favicon.svg",
+      "bytes": 386,
+      "sha256": "fde50dffafaaba6198977463b82ce22f66d1ef2f897a15d61b8cd4e97d7cf618"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 1078,
+      "sha256": "653881456d057baabef0e500cfbb2ad93e7cf7416113faf1852faf7f465b5d6e"
+    },
+    {
+      "path": "dist/pepe-game.json",
+      "bytes": 1302,
+      "sha256": "716cb661b70ce2f9e9db20aa3111663db208e1fd16b8f40f25370390295ba66e"
+    }
+  ],
+  "cover": {
+    "path": "dist/cover.jpg",
+    "width": 1200,
+    "height": 630,
+    "format": "JPEG",
+    "verifiedWith": "Pillow Image.open"
+  }
+}

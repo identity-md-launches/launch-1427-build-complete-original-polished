@@ -1,0 +1,190 @@
+{
+  "started": "2026-10-12T15:26:46.134Z",
+  "browser": "156.0.8078.4",
+  "checks": [
+    {
+      "name": "Desktop lobby, local fonts, metadata and relative subpath load",
+      "status": "pass"
+    },
+    {
+      "name": "Visible native keyboard focus",
+      "status": "pass"
+    },
+    {
+      "name": "Lobby reflow and first-screen Deploy at 390px",
+      "status": "pass"
+    },
+    {
+      "name": "Lobby reflow and first-screen Deploy at 320px",
+      "status": "pass"
+    },
+    {
+      "name": "Lobby reflow and first-screen Deploy at 768px",
+      "status": "pass"
+    },
+    {
+      "name": "Faction, difficulty and live local lobby slots",
+      "status": "pass"
+    },
+    {
+      "name": "Briefing modal Escape and focus restoration",
+      "status": "pass"
+    },
+    {
+      "name": "Audio waits for a gesture; mute and unmute work",
+      "status": "pass"
+    },
+    {
+      "name": "Minimap remains inside desktop viewport",
+      "status": "pass"
+    },
+    {
+      "name": "Power → barracks construction and automatic harvester deposits",
+      "status": "pass",
+      "harvested": 420
+    },
+    {
+      "name": "Training queue and cancel/refund",
+      "status": "pass"
+    },
+    {
+      "name": "Complete build progression: power, barracks, factory, signal lab",
+      "status": "pass"
+    },
+    {
+      "name": "Pointer select and double-click matching rank/job",
+      "status": "pass"
+    },
+    {
+      "name": "Control groups and Shift-queued right-click orders",
+      "status": "pass"
+    },
+    {
+      "name": "Stop clears selected unit orders",
+      "status": "pass"
+    },
+    {
+      "name": "WASD camera movement and wheel zoom",
+      "status": "pass"
+    },
+    {
+      "name": "Pause freezes the full simulation; resume works",
+      "status": "pass"
+    },
+    {
+      "name": "Field manual pauses and Escape returns to battle",
+      "status": "pass"
+    },
+    {
+      "name": "Reduced motion updates canvas effects",
+      "status": "pass"
+    },
+    {
+      "name": "Loaded game continues offline without a service dependency",
+      "status": "pass"
+    },
+    {
+      "name": "Army pathfinding, fog exploration and real uplink capture",
+      "status": "pass"
+    },
+    {
+      "name": "Full UI-driven skirmish reaches natural game-over",
+      "status": "pass",
+      "result": "victory",
+      "time": 343.03000000005153,
+      "score": 4357,
+      "reason": "Your alliance secured 540 uplink signal."
+    },
+    {
+      "name": "Instant replay resets battle, resources and result",
+      "status": "pass"
+    },
+    {
+      "name": "Drag-box multi-selection",
+      "status": "pass"
+    },
+    {
+      "name": "Middle-mouse drag pans camera",
+      "status": "pass"
+    },
+    {
+      "name": "Touch building placement and confirmation",
+      "status": "pass"
+    },
+    {
+      "name": "Touch army selection and orders",
+      "status": "pass"
+    },
+    {
+      "name": "Touch drag pans battlefield",
+      "status": "pass"
+    },
+    {
+      "name": "Touch minimap jump and panel dismissal",
+      "status": "pass"
+    },
+    {
+      "name": "Landscape/portrait reflow keeps touch commands reachable",
+      "status": "pass"
+    },
+    {
+      "name": "Touch pause and confirmed restart",
+      "status": "pass"
+    },
+    {
+      "name": "In-game mute remains available on touch",
+      "status": "pass"
+    },
+    {
+      "name": "Opaque sandbox loads complete game and fonts with storage denied and no CORS headers",
+      "status": "pass"
+    },
+    {
+      "name": "Bridge init/ready includes exact protocol and channel",
+      "status": "pass"
+    },
+    {
+      "name": "Bridge rejects wrong channel and non-parent source",
+      "status": "pass"
+    },
+    {
+      "name": "Parent bridge pause/resume controls simulation",
+      "status": "pass"
+    },
+    {
+      "name": "Visibility loss pauses; local resume works without a host message",
+      "status": "pass"
+    },
+    {
+      "name": "Natural defeat emits one valid integer score to the parent",
+      "status": "pass",
+      "score": 267,
+      "time": 177.6213999999886
+    },
+    {
+      "name": "Replay works inside storage-denied iframe",
+      "status": "pass"
+    },
+    {
+      "name": "No uncaught JavaScript errors or failed resources across tested flows",
+      "status": "pass"
+    }
+  ],
+  "screenshots": [
+    "desktop-lobby.jpg",
+    "mobile-lobby.jpg",
+    "briefing.jpg",
+    "desktop-battle.jpg",
+    "victory.jpg",
+    "mobile-battle.jpg",
+    "sandbox-defeat.jpg"
+  ],
+  "errors": [],
+  "networkFailures": [],
+  "limitations": [
+    "Chromium desktop and emulated touch; no physical phone, screen reader, or native browser zoom session.",
+    "Long matches use Playwright virtual time. All orders go through actual UI; read-only diagnostics observe the state."
+  ],
+  "status": "pass",
+  "finished": "2026-10-12T15:40:02.806Z"
+}
