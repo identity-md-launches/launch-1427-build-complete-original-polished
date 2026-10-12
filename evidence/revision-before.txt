@@ -1,0 +1,77 @@
+FAIL Engine: queued field preserves the active harvesting cycle: The first cycle should be delivered by 30 seconds
+PASS chromium: one tap opens and a second closes base
+PASS chromium: one tap opens and a second closes army
+PASS chromium: one tap opens and a second closes radar
+PASS chromium: one Order tap issues movement for selected army
+PASS chromium: touch mute toggles exactly once
+PASS Chromium: first panel tap after a native canvas drag works
+FAIL chromium: minimap marker maps to HQ at 390px: Expected HQ (360,390), got (490.232582979424,394.63639692826706)
+FAIL chromium: minimap marker maps to HQ at 700px: Expected HQ (360,390), got (826.6666517345184,394.63639692826706)
+FAIL chromium: construction clears visible Order state at 390px: Expected values to be strictly equal:
+
+'true' !== 'false'
+
+FAIL chromium: construction clears visible Order state at 320px: Expected values to be strictly equal:
+
+'true' !== 'false'
+
+PASS chromium: native mouse and keyboard activation survive touch
+FAIL chromium: Shift-right-click harvests then advances the queued field: First field not active: 460.05150733605194,223.10637655975353
+FAIL chromium: arcade pause survives confirmed restart: Expected values to be strictly equal:
+
+false !== true
+
+FAIL chromium: arcade pause survives lobby and fresh deployment: Expected values to be strictly equal:
+
+false !== true
+
+FAIL chromium: a pause received in the lobby applies to the next match: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: one tap opens and a second closes base: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: one tap opens and a second closes army: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: one tap opens and a second closes radar: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: one Order tap issues movement for selected army: Expected values to be strictly equal:
+
+'select' !== 'order'
+
+FAIL webkit: touch mute toggles exactly once: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: minimap marker maps to HQ at 390px: Minimap blocked by duplicate tap
+FAIL webkit: minimap marker maps to HQ at 700px: Minimap blocked by duplicate tap
+FAIL webkit: construction clears visible Order state at 390px: Expected values to be strictly equal:
+
+'select' !== 'order'
+
+FAIL webkit: construction clears visible Order state at 320px: Expected values to be strictly equal:
+
+'select' !== 'order'
+
+PASS webkit: native mouse and keyboard activation survive touch
+FAIL webkit: Shift-right-click harvests then advances the queued field: First field not active: 279.67373659144073,481.46818533851666
+FAIL webkit: arcade pause survives confirmed restart: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: arcade pause survives lobby and fresh deployment: Expected values to be strictly equal:
+
+false !== true
+
+FAIL webkit: a pause received in the lobby applies to the next match: Expected values to be strictly equal:
+
+false !== true
+
+PASS No page errors or failed runtime resources
+9 passed, 22 failed

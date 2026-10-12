@@ -77,7 +77,9 @@ Both factions use the same readable tech chain. Team colors identify owners; uni
 | Cancel placement / pause | Escape / P |
 | Pause, mute, manual | Labeled buttons in the interface |
 
-**Touch:** tap selects; drag pans. Use **Select army → Order → tap destination** to advance. Tap Order again to return to selection mode. **Build base**, **Train army**, and **Minimap** open compact panels; tap the same panel button to dismiss it. Choose a building, tap its location, then **Place here**. The zoom buttons remain available. Control-group assignment and Shift queues require a keyboard; touch does not emulate multi-key shortcuts or pinch zoom.
+**Harvest queues:** Shift-right-click another crystal field to switch after the active load is delivered to HQ. A depleted field delivers its partial load; an empty field advances immediately. After the last queued job, harvesting continues automatically on the last assigned field.
+
+**Touch:** tap selects; drag pans. Use **Select army → Order → tap destination** to advance. Tap Order again to return to selection mode. **Build base**, **Train army**, and **Minimap** open compact panels; tap the same panel button to dismiss it. Choose a building, tap its location, then **Place here**. Choosing construction turns Order off; after canceling, enable Order again to move the selected army. The zoom buttons remain available. Control-group assignment and Shift queues require a keyboard; touch does not emulate multi-key shortcuts or pinch zoom.
 
 **Keyboard construction:** choose a structure with a shortcut or Tab, pan with WASD, then use Enter or **Place at center**. Native dialogs contain focus; Escape returns to the previous surface. The visual battlefield is not a fully screen-reader-playable RTS; menus, instructions, and status text are semantic HTML.
 
@@ -95,20 +97,21 @@ npm run check:submission
 npm run preview
 ```
 
-For source development: `npm run dev`. For browser validation, install Playwright Chromium once, then run:
+For source development: `npm run dev`. For browser validation, install the pinned Playwright Chromium and WebKit engines, then run:
 
 ```sh
-npx playwright install chromium
+npx playwright install chromium webkit
 npm run test:browser
+npm run test:revision
 ```
 
-The browser test owns its temporary HTTP server and Chromium lifecycle. It serves the production export at `/preview/`, checks actual pointer/keyboard/touch interactions, and tests a storage-denied iframe with **no CORS response headers**. Full matches use Playwright virtual time to exercise the production simulation without changing game state. Results and screenshots are written to `evidence/`.
+The browser test owns its temporary HTTP server and Chromium lifecycle. It serves the production export at `/preview/`, checks actual pointer/keyboard/touch interactions, and tests a storage-denied iframe with **no CORS response headers**. Full matches use Playwright virtual time to exercise the production simulation without changing game state. Results and screenshots are written to `evidence/`. The revision suite runs the five reported regressions in Chromium and WebKit, including actual touch taps and a parent-paused restart in the opaque iframe; its reports are [`revision-before.json`](evidence/revision-before.json) and [`revision-after.json`](evidence/revision-after.json). On Linux, Playwright may also require its documented system browser dependencies.
 
 The delivered export is already built; hosting **does not need to install dependencies or rebuild**. Do not open the source `index.html` directly as a file. Use HTTP preview or static hosting. The classic IIFE export avoids ES-module loading restrictions in opaque iframe origins. Fonts are embedded by the build. All other assets are local and relative.
 
 ### Worker environment
 
-This run kept installed dependencies in disposable `test/scratch/tooling/`, never in a submitted `node_modules/`. The same scripts were run with its binaries on `PATH`; browser/cover scripts also accept `PEPE_TOOL_ROOT` and `PEPE_CHROME` to use an already installed test browser. These overrides are for local validation only and are not runtime game settings.
+This revision kept installed dependencies under `/tmp/pepefront-revision-tools/`, outside the repository, using the unchanged pinned lockfile. Build/typecheck used that directory's binaries on `PATH`. Browser scripts accept `PEPE_TOOL_ROOT` and `PEPE_CHROME`; the revision suite also accepts `PEPE_WEBKIT`. These overrides are only for local validation, not runtime settings. The exact worker setup and test coverage are recorded in [VALIDATION.md](VALIDATION.md).
 
 - `.gitignore` has an explicit **512-byte path budget** and excludes dependency/cache directories at every level plus `test/scratch/`. It intentionally does not ignore `dist/` or `evidence/`.
 - Export budget: **2 MiB**; complete submission limit: **8 MiB**. Exact final sizes are in [`evidence/export-check.txt`](evidence/export-check.txt) and [`evidence/submission-budget.json`](evidence/submission-budget.json).
@@ -118,7 +121,7 @@ This run kept installed dependencies in disposable `test/scratch/tooling/`, neve
 
 Actual commands, outcomes, fixes, browser evidence, coverage and limitations are recorded in [`VALIDATION.md`](VALIDATION.md). The implemented palette, type system, layout, components and responsive behavior are documented in [`DESIGN.md`](DESIGN.md). Asset provenance and the generation prompt are in [`ART.md`](ART.md); licenses and guidance attribution are in [`licenses/NOTICE.md`](licenses/NOTICE.md).
 
-Worker results: production build and typecheck passed; **27 engine tests and 40 Chromium interaction checks passed**, including natural victory/defeat, touch controls, replay and the opaque iframe bridge. No uncaught JavaScript errors or failed resources were recorded. Physical-device, Safari/Firefox and nonvisual gameplay checks remain limitations, as detailed in the validation record.
+Revision results: production build and typecheck passed; **31 engine tests, 35 Chromium/WebKit regression checks, and 40 full-game Chromium checks passed**, including natural victory/defeat, touch controls, replay and the opaque iframe bridge. All five reviewer findings were reproduced and fixed; [`.imd-responses.json`](.imd-responses.json) records each answer. No uncaught JavaScript errors or failed resources were recorded in the final suites. Physical iPhone/Safari, Firefox and nonvisual gameplay remain untested, as detailed in the validation record.
 
 Source layout: `src/game.ts` is the simulation; `src/render.ts` draws the battlefield and miniatures; `src/main.ts` owns UI and input; `src/audio.ts` synthesizes effects; `src/bridge.ts` implements the arcade messaging contract. `public/pepe-game.json` is the manifest source. Build scripts copy it and the original cover into `dist/`.
 

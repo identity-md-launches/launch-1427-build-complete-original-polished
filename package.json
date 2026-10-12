@@ -10,6 +10,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --experimental-strip-types --test tests/engine.test.mjs",
     "test:browser": "node tests/browser.mjs",
+    "test:revision": "node tests/revision.mjs",
     "check:export": "node scripts/check-export.mjs",
     "check:submission": "node scripts/check-submission.mjs"
   },

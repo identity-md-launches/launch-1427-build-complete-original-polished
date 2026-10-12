@@ -1,0 +1,45 @@
+
+> pepefront@1.0.0 test:revision
+> node tests/revision.mjs
+
+PASS Engine: queued field preserves the active harvesting cycle
+PASS chromium: one tap opens and a second closes base
+PASS chromium: one tap opens and a second closes army
+PASS chromium: one tap opens and a second closes radar
+PASS chromium: one Order tap issues movement for selected army
+PASS chromium: touch mute toggles exactly once
+PASS Chromium: first panel tap after a native canvas drag works
+PASS chromium: minimap marker maps to HQ at 390px
+PASS chromium: minimap marker maps to HQ at 700px
+PASS chromium: minimap marker maps to HQ at 320px
+PASS chromium: construction clears visible Order state at 390px
+PASS chromium: construction clears visible Order state at 320px
+PASS chromium: native mouse and keyboard activation survive touch
+PASS chromium: Shift-right-click harvests then advances the queued field
+PASS chromium: arcade pause survives confirmed restart
+PASS chromium: arcade pause survives lobby and fresh deployment
+PASS chromium: a pause received in the lobby applies to the next match
+PASS chromium: a resume received in the lobby releases the next match
+PASS webkit: one tap opens and a second closes base
+PASS webkit: one tap opens and a second closes army
+PASS webkit: one tap opens and a second closes radar
+PASS webkit: one Order tap issues movement for selected army
+PASS webkit: touch mute toggles exactly once
+PASS webkit: minimap marker maps to HQ at 390px
+PASS webkit: minimap marker maps to HQ at 700px
+PASS webkit: minimap marker maps to HQ at 320px
+PASS webkit: construction clears visible Order state at 390px
+PASS webkit: construction clears visible Order state at 320px
+PASS webkit: native mouse and keyboard activation survive touch
+PASS webkit: Shift-right-click harvests then advances the queued field
+PASS webkit: arcade pause survives confirmed restart
+PASS webkit: arcade pause survives lobby and fresh deployment
+PASS webkit: a pause received in the lobby applies to the next match
+PASS webkit: a resume received in the lobby releases the next match
+PASS No page errors or failed runtime resources
+35 passed, 0 failed
+npm notice
+npm notice New minor version of npm available! 11.6.0 -> 11.21.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.0
+npm notice To update run: npm install -g npm@11.21.0
+npm notice

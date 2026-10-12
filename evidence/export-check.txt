@@ -6,7 +6,7 @@
   "status": "pass",
   "manifest": "pepe-browser-game/1",
   "iframe": "classic script + embedded local fonts",
-  "exportBytes": 596480,
+  "exportBytes": 597331,
   "exportBudget": 2097152,
   "files": [
     {
@@ -18,8 +18,8 @@
       "bytes": 186920
     },
     {
-      "path": "assets/index-WXo_PyN-.js",
-      "bytes": 236899
+      "path": "assets/index-D3jt6tTP.js",
+      "bytes": 237750
     },
     {
       "path": "cover.jpg",

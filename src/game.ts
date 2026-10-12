@@ -668,8 +668,6 @@ export class Game {
         e.path = [];
         e.pathAge = 0;
       }
-      if (e.kind === "harvester" && order.type === "harvest")
-        e.harvestNode = order.target ?? -1;
       i++;
     }
     if (valid.length) this.onSound?.("order");
@@ -1024,10 +1022,24 @@ export class Game {
   harvest(e: Entity, dt: number) {
     const hq = this.getHQ(e.owner);
     if (!hq) return;
+    const order = e.orders[0];
+    if (order?.type === "harvest" && e.harvestNode !== (order.target ?? -1)) {
+      e.harvestNode = order.target ?? -1;
+      e.path = [];
+      e.pathAge = 0;
+    }
     let node = this.resources.find(
       (n) => n.id === e.harvestNode && n.amount > 0,
     );
-    if (!node) {
+    // An explicit assignment completes after one delivery (including a depleted
+    // field's partial load). With no queued order, automatic harvesting repeats.
+    if (!node && order?.type === "harvest" && e.cargo === 0) {
+      e.orders.shift();
+      e.path = [];
+      e.pathAge = 0;
+      return;
+    }
+    if (!node && !order) {
       node = this.resources
         .filter((n) => n.amount > 0)
         .sort((a, b) => dist(e, a) - dist(e, b))[0];
@@ -1042,7 +1054,9 @@ export class Game {
         }
         this.burst(e, 5, "#bafa47");
         e.cargo = 0;
+        if (order?.type === "harvest") e.orders.shift();
         e.path = [];
+        e.pathAge = 0;
       } else this.move(e, hq, dt);
     } else if (node) {
       if (dist(e, node) < 62) {

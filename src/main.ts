@@ -81,8 +81,7 @@ function lobby() {
   game = null;
   screen = "lobby";
   keys.clear();
-  audio.setPaused(false);
-  hostPaused = false;
+  audio.setPaused(hostPaused);
   root.innerHTML = `${header()}<main class="lobby" id="main-content"><section class="hero" aria-labelledby="game-title"><div class="hero-art" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div><div class="hero-content"><div class="operation-label"><span class="crosshair">+</span> Operation Nightfall <span class="operation-line"></span> 07</div><h1 id="game-title">PEPEFRONT<span class="title-notch" aria-hidden="true"></span></h1><h2>Command the night.</h2><p class="hero-description">A neon-noir real-time strategy game.<br>Build your base. Lead your Pepes.</p><div class="deploy-block"><button class="primary-button deploy-button" data-action="briefing"><span>Deploy to Nightfall</span>${icon("diagonal")}</button><div class="deploy-note"><span>Solo vs AI</span><span>5–12 min</span><span>Instant play</span></div></div><button class="text-button training-link" data-action="training">${icon("target")} New commander? Start with Recruit AI ${icon("arrow")}</button></div><div class="art-caption"><span class="record-dot"></span><span>COMMAND FEED <b>01</b></span><span>COL. P. FROGMAN</span></div><div class="hero-bottom"><span>37° 14′ N &nbsp; 115° 48′ E</span><span>THE POND IS OURS.</span></div></section><section class="mission-config" aria-label="Skirmish setup"><div class="faction-section"><div class="section-heading"><h2>Choose your allegiance</h2><span>01 / Faction</span></div><div class="faction-options"><button class="faction-option ${config.faction === "initiative" ? "chosen" : ""}" data-action="faction" data-value="initiative" aria-pressed="${config.faction === "initiative"}"><span class="faction-emblem initiative">${icon("shield")}</span><span class="faction-copy"><strong>Initiative Pepes</strong><span>Hold the line. Hit harder.</span><small>+20% health · Advanced defenses</small></span><span class="selection-check">${icon("check")}</span></button><button class="faction-option ${config.faction === "cult" ? "chosen" : ""}" data-action="faction" data-value="cult" aria-pressed="${config.faction === "cult"}"><span class="faction-emblem cult">${icon("cult")}</span><span class="faction-copy"><strong>Cult Pepes</strong><span>Strike fast. Disappear.</span><small>−20% cost · Stealth Commandos</small></span><span class="selection-check">${icon("check")}</span></button></div></div><div class="rules-section"><div class="section-heading"><h2>Set the engagement</h2><span>02 / Rules</span></div><div class="select-row"><label for="match-mode">Match format</label><div class="select-wrap"><select id="match-mode"><option value="duel" ${config.mode === "duel" ? "selected" : ""}>1v1 · Duel</option><option value="teams" ${config.mode === "teams" ? "selected" : ""}>2v2 · Allied front</option><option value="ffa" ${config.mode === "ffa" ? "selected" : ""}>4-way · Free for all</option></select>${icon("chevron")}</div></div><div class="select-row"><label for="difficulty">Enemy command</label><div class="select-wrap"><select id="difficulty"><option value="recruit" ${config.difficulty === "recruit" ? "selected" : ""}>Recruit · Learning the ropes</option><option value="veteran" ${config.difficulty === "veteran" ? "selected" : ""}>Veteran · Fight for every inch</option><option value="brutal" ${config.difficulty === "brutal" ? "selected" : ""}>Brutal · Relentless pressure</option></select>${icon("chevron")}</div></div><div class="lobby-slots" id="lobby-slots"></div><p class="local-note">One human commander. All other slots are local AI.</p></div><div class="map-section"><div class="section-heading"><h2>Nightfall</h2><span>03 / Sector</span></div><div class="map-frame">${mapSVG}<span class="map-weather">Rain / 03:47</span></div><div class="map-description"><span>Industrial wasteland</span><span>3 uplinks ${icon("target")}</span></div></div></section><footer class="lobby-footer"><span>${mark} PEPE2PEPE ARCADE</span><p>No ranks to grind. Just ground to take.</p><span>PEPEFRONT <b>v1.0</b></span></footer></main><dialog id="dialog" aria-labelledby="dialog-title"></dialog>`;
   $("#match-mode").addEventListener("change", (e) => {
     config.mode = (e.target as HTMLSelectElement).value as Mode;
@@ -164,15 +163,15 @@ function startMatch(replay = false) {
   lastSelection = "";
   lastCards = "";
   tab = "base";
-  commandMode = "select";
+  setCommandMode("select");
   buildTouch = null;
   shownResult = false;
-  hostPaused = false;
   if (!replay) config.seed = Math.floor(Math.random() * 1e8);
   game = new Game({ ...config });
+  game.paused = hostPaused;
   game.onSound = (name) => audio.play(name);
   screen = "game";
-  audio.setPaused(false);
+  audio.setPaused(hostPaused);
   void audio.unlock();
   root.innerHTML = `<main class="game-shell" id="main-content"><header class="game-header"><div class="game-brand">${mark}<span>PEPEFRONT</span></div><div class="operation-name"><strong>Nightfall</strong><span><i></i> Operation live</span></div><div class="resource-strip"><div class="resource crystals" title="Crystals available">${icon("crystal")}<span id="credits">1,100</span><small>Crystals</small></div><div class="resource" id="power-stat" title="Power used / capacity">${icon("power")}<span id="power">0 / 12</span><small>Power</small></div><div class="resource" title="Active Pepes / limit">${icon("army")}<span id="supply">8 / 50</span><small>Pepes</small></div></div><div class="game-top-actions"><time id="timer">00:00</time>${soundButton()}<button class="icon-button" data-action="pause" aria-label="Pause game" title="Pause (P)">${icon("pause")}</button></div></header><div class="game-body"><section class="battlefield" aria-label="Battlefield"><canvas id="battlefield" tabindex="0" aria-label="Nightfall battlefield. Select army with X, pan with WASD, Enter orders selected units to the screen center. See the Field manual for all controls."></canvas><div class="map-top"><div class="objective-card"><span class="objective-icon">${icon("target")}</span><div><strong>Control the sector</strong><span>Hold uplinks or destroy enemy HQs.</span></div><button class="icon-button" data-action="manual" aria-label="Open field manual">${icon("book")}</button></div><div class="uplink-strip" id="uplink-strip"></div></div><div class="lesson" id="lesson"></div><div class="map-side"><button class="icon-button" data-action="zoom-in" aria-label="Zoom in">${icon("plus")}</button><button class="icon-button" data-action="zoom-out" aria-label="Zoom out">${icon("minus")}</button><button class="icon-button" data-action="home" aria-label="Center on Command HQ" title="Center HQ (Home)">${icon("home")}</button></div><div class="placement-message" id="placement-message" hidden><span id="placement-label"></span><button data-action="confirm-place" class="compact-primary">Place at center</button><button data-action="cancel-place" class="icon-button" aria-label="Cancel placement">${icon("close")}</button></div><div class="battle-log" id="battle-log" role="status" aria-live="polite"></div><div class="map-bottom"><span>SECTOR 07 <b>+</b> <span id="camera-position">0450 / 0420</span></span><span class="desktop-hint">WASD to pan · Scroll to zoom</span><span class="mobile-signal" id="compact-signal">0 / 540 signal</span></div></section><aside class="command-panel" aria-label="Production and tactical map"><div class="panel-heading"><h2>Command</h2><span class="panel-state"><i></i> Online</span></div><div class="command-tabs" role="group" aria-label="Command menu"><button data-action="tab-base" aria-pressed="true">Base <kbd>B</kbd></button><button data-action="tab-army" aria-pressed="false">Army <kbd>F</kbd></button></div><div class="build-grid" id="build-grid"></div><div class="unit-description" id="unit-description">${icon("power")}<p><strong>Establish your foothold</strong><span>Start with power. Build near your Command HQ.</span></p></div><div class="production"><div class="production-heading"><h3>Production queue</h3><span id="queue-count">0 / 8</span></div><div id="queue" class="queue"></div></div><div class="radar"><div class="radar-heading"><span>${icon("signal")} Tactical uplink</span><button class="text-button" data-action="home">HQ ${icon("home")}</button></div><canvas id="minimap" tabindex="0" aria-label="Minimap. Click or tap to move camera; arrow keys pan the camera."></canvas><div class="radar-labels"><span><i class="ally-dot"></i>You / allies</span><span><i class="enemy-dot"></i>Opposition</span></div></div></aside></div><footer class="command-bar"><div class="selection-portrait" id="selection-portrait">${cardImg("hq")}</div><div class="selection-info"><strong id="selection-title">Command ready</strong><span id="selection-detail">Select a Pepe or drag to select a squad.</span><div class="selection-pips" id="selection-pips"></div></div><div class="command-buttons"><button data-action="select-army" title="Select all combat Pepes (X)">${icon("army")}<span>Select army</span><kbd>X</kbd></button><button data-action="order" id="order-button" aria-pressed="false">${icon("target")}<span>Order</span><kbd>↵</kbd></button><button data-action="stop" title="Stop selected units (H)">${icon("stop")}<span>Stop</span><kbd>H</kbd></button><button data-action="alert" title="Center last alert (Space)">${icon("signal")}<span>Last alert</span></button></div><div class="signal-score"><span>Sector signal</span><strong id="signal-score">0 <small>/ 540</small></strong><span id="enemy-signal" class="enemy-signal" title="Highest enemy signal">Enemy 0</span><div class="signal-track"><i id="signal-progress"></i></div></div></footer><div class="mobile-panel-bar"><button data-action="mobile-base" aria-label="Open base construction">${icon("home")}<span>Build base</span></button><button data-action="mobile-army" aria-label="Open army production">${icon("army")}<span>Train army</span></button><button data-action="mobile-radar" aria-label="Open tactical minimap">${icon("signal")}<span>Minimap</span></button></div></main><dialog id="dialog" aria-labelledby="dialog-title"></dialog>`;
   renderer = new Renderer(
@@ -185,6 +184,7 @@ function startMatch(replay = false) {
   renderCards();
   updateHUD();
   $("#battlefield").focus({ preventScroll: true });
+  if (hostPaused) pause();
 }
 function relocateRadar() {
   if (screen !== "game") return;
@@ -398,8 +398,11 @@ function resultDialog() {
   );
 }
 function pause(fromHost = false) {
+  if (fromHost) {
+    hostPaused = true;
+    audio.setPaused(true);
+  }
   if (!game || game.result) return;
-  if (fromHost) hostPaused = true;
   game.paused = true;
   keys.clear();
   audio.setPaused(true);
@@ -409,9 +412,12 @@ function pause(fromHost = false) {
   );
 }
 function resume(fromHost = false) {
+  if (fromHost) {
+    hostPaused = false;
+    audio.setPaused(false);
+  }
   if (!game || game.result) return;
   if (hostPaused && !fromHost) return;
-  hostPaused = false;
   game.paused = false;
   audio.setPaused(false);
   closeDialog();
@@ -434,7 +440,7 @@ function chooseBuild(kind: BuildingKind) {
   }
   renderer.placement = kind;
   buildTouch = null;
-  commandMode = "select";
+  setCommandMode("select");
   renderer.pointer = { x: renderer.width / 2, y: renderer.height / 2 };
   $("#placement-message").hidden = false;
   $("#placement-label").textContent =
@@ -448,6 +454,17 @@ function cancelPlace() {
   if (renderer) renderer.placement = null;
   buildTouch = null;
   $("#placement-message").hidden = true;
+}
+function setCommandMode(mode: "select" | "order") {
+  const changed = commandMode !== mode;
+  commandMode = mode;
+  $("#order-button")?.setAttribute("aria-pressed", String(mode === "order"));
+  if (changed)
+    game?.alert(
+      mode === "order"
+        ? "Order mode: select a destination on the battlefield."
+        : "Selection mode: choose your Pepes.",
+    );
 }
 function placeAt(p: Point) {
   if (!game || !renderer?.placement) return;
@@ -646,10 +663,21 @@ function setupCanvas() {
   let miniDown = false;
   const jump = (e: PointerEvent) => {
     if (!renderer || game?.paused) return;
-    const r = mini.getBoundingClientRect();
+    const r = mini.getBoundingClientRect(),
+      style = getComputedStyle(mini),
+      borderX = parseFloat(style.borderLeftWidth),
+      borderY = parseFloat(style.borderTopWidth),
+      contentWidth = r.width - borderX - parseFloat(style.borderRightWidth),
+      contentHeight = r.height - borderY - parseFloat(style.borderBottomWidth),
+      scale = Math.min(contentWidth / mini.width, contentHeight / mini.height),
+      width = style.objectFit === "contain" ? mini.width * scale : contentWidth,
+      height = style.objectFit === "contain" ? mini.height * scale : contentHeight,
+      left = r.left + borderX + (contentWidth - width) / 2,
+      top = r.top + borderY + (contentHeight - height) / 2;
+    // The touch map is centered with object-fit: contain; its gutters are not terrain.
     renderer.center({
-      x: ((e.clientX - r.left) / r.width) * W,
-      y: ((e.clientY - r.top) / r.height) * H,
+      x: ((e.clientX - left) / width) * W,
+      y: ((e.clientY - top) / height) * H,
     });
   };
   mini.addEventListener("pointerdown", (e) => {
@@ -686,26 +714,46 @@ function setupCanvas() {
   });
 }
 
-// Some touch browsers suppress the compatibility click immediately after a canvas drag.
-// Activate a stationary touch on native buttons once, then discard its duplicate native click.
+// Chromium can omit the first compatibility click after dragging the battlefield.
+// Activate stationary button taps, then deduplicate by gesture/target: WebKit labels
+// its touch compatibility click as "mouse". A new pointerdown is a new gesture.
 let touchButton: {
   element: HTMLButtonElement;
   x: number;
   y: number;
   id: number;
 } | null = null;
-let handledTouchAt = -Infinity;
+let handledTouch: {
+  element: HTMLButtonElement;
+  x: number;
+  y: number;
+  at: number;
+} | null = null;
 root.addEventListener("pointerdown", (event) => {
+  handledTouch = null;
+  touchButton = null;
   if (event.pointerType !== "touch") return;
   const element = (event.target as Element).closest<HTMLButtonElement>(
     "button[data-action]",
   );
-  touchButton = element
-    ? { element, x: event.clientX, y: event.clientY, id: event.pointerId }
-    : null;
+  if (element)
+    touchButton = {
+      element,
+      x: event.clientX,
+      y: event.clientY,
+      id: event.pointerId,
+    };
+});
+root.addEventListener("pointermove", (event) => {
+  if (
+    touchButton?.id === event.pointerId &&
+    Math.hypot(event.clientX - touchButton.x, event.clientY - touchButton.y) > 10
+  )
+    touchButton = null;
 });
 root.addEventListener("pointercancel", () => {
   touchButton = null;
+  handledTouch = null;
 });
 root.addEventListener("pointerup", (event) => {
   const touch = touchButton;
@@ -714,25 +762,34 @@ root.addEventListener("pointerup", (event) => {
     !touch ||
     event.pointerType !== "touch" ||
     touch.id !== event.pointerId ||
-    touch.element.disabled
+    touch.element.disabled ||
+    Math.hypot(event.clientX - touch.x, event.clientY - touch.y) > 10 ||
+    !(event.target as Element).closest("button")?.isSameNode(touch.element)
   )
     return;
-  if (Math.hypot(event.clientX - touch.x, event.clientY - touch.y) > 10) return;
-  if (!(event.target as Element).closest("button")?.isSameNode(touch.element))
-    return;
-  handledTouchAt = performance.now();
+  handledTouch = {
+    element: touch.element,
+    x: event.clientX,
+    y: event.clientY,
+    at: performance.now(),
+  };
   touch.element.click();
 });
 root.addEventListener(
   "click",
   (event) => {
-    const pointer = event as PointerEvent;
+    const touch = handledTouch;
     if (
+      touch &&
       event.isTrusted &&
       event.detail > 0 &&
-      (!pointer.pointerType || pointer.pointerType === "touch") &&
-      performance.now() - handledTouchAt < 700
+      performance.now() - touch.at < 700 &&
+      ((event.target as Element).closest("button") === touch.element ||
+        // Starting/restarting can replace the button before its native click.
+        (!touch.element.isConnected &&
+          Math.hypot(event.clientX - touch.x, event.clientY - touch.y) < 10))
     ) {
+      handledTouch = null;
       event.preventDefault();
       event.stopImmediatePropagation();
     }
@@ -859,16 +916,7 @@ root.addEventListener("click", (event) => {
     audio.play("order");
   }
   if (action === "order") {
-    commandMode = commandMode === "order" ? "select" : "order";
-    $("#order-button").setAttribute(
-      "aria-pressed",
-      String(commandMode === "order"),
-    );
-    game.alert(
-      commandMode === "order"
-        ? "Order mode: select a destination on the battlefield."
-        : "Selection mode: choose your Pepes.",
-    );
+    setCommandMode(commandMode === "order" ? "select" : "order");
   }
   if (action === "zoom-in") renderer.zoom(renderer.camera.zoom * 1.2);
   if (action === "zoom-out") renderer.zoom(renderer.camera.zoom / 1.2);

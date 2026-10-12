@@ -23,10 +23,11 @@ PASS Field manual pauses and Escape returns to battle
 PASS Reduced motion updates canvas effects
 PASS Loaded game continues offline without a service dependency
 PASS Army pathfinding, fog exploration and real uplink capture
-MATCH t=224 signal=214 units=24 result=null
-MATCH t=266 signal=325 units=24 result=null
-MATCH t=309 signal=436 units=26 result=null
-MATCH t=343 signal=540 units=29 result=victory
+MATCH t=213 signal=208 units=25 result=null
+MATCH t=253 signal=296 units=26 result=null
+MATCH t=293 signal=403 units=25 result=null
+MATCH t=334 signal=524 units=27 result=null
+MATCH t=339 signal=540 units=27 result=victory
 PASS Full UI-driven skirmish reaches natural game-over
 PASS Instant replay resets battle, resources and result
 PASS Drag-box multi-selection
@@ -43,10 +44,15 @@ PASS Bridge init/ready includes exact protocol and channel
 PASS Bridge rejects wrong channel and non-parent source
 PASS Parent bridge pause/resume controls simulation
 PASS Visibility loss pauses; local resume works without a host message
-SANDBOX t=61
-SANDBOX t=121
-SANDBOX t=178
+SANDBOX t=60
+SANDBOX t=120
+SANDBOX t=174
 PASS Natural defeat emits one valid integer score to the parent
 PASS Replay works inside storage-denied iframe
 PASS No uncaught JavaScript errors or failed resources across tested flows
 Browser evidence saved: 40 checks, status pass
+npm notice
+npm notice New minor version of npm available! 11.6.0 -> 11.21.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.21.0
+npm notice To update run: npm install -g npm@11.21.0
+npm notice

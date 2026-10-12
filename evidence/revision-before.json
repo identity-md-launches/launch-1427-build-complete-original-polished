@@ -1,0 +1,541 @@
+{
+  "phase": "before",
+  "started": "2026-10-12T16:31:18.451Z",
+  "browsers": {
+    "chromium": "141.0.7390.37",
+    "webkit": "26.0"
+  },
+  "checks": [
+    {
+      "name": "Engine: queued field preserves the active harvesting cycle",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: The first cycle should be delivered by 30 seconds"
+    },
+    {
+      "name": "chromium: one tap opens and a second closes base",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: one tap opens and a second closes army",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: one tap opens and a second closes radar",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: one Order tap issues movement for selected army",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: touch mute toggles exactly once",
+      "status": "pass"
+    },
+    {
+      "name": "Chromium: first panel tap after a native canvas drag works",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: minimap marker maps to HQ at 390px",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected HQ (360,390), got (490.232582979424,394.63639692826706)"
+    },
+    {
+      "name": "chromium: minimap marker maps to HQ at 700px",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected HQ (360,390), got (826.6666517345184,394.63639692826706)"
+    },
+    {
+      "name": "chromium: construction clears visible Order state at 390px",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'true' !== 'false'\n"
+    },
+    {
+      "name": "chromium: construction clears visible Order state at 320px",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'true' !== 'false'\n"
+    },
+    {
+      "name": "chromium: native mouse and keyboard activation survive touch",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: Shift-right-click harvests then advances the queued field",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: First field not active: 460.05150733605194,223.10637655975353"
+    },
+    {
+      "name": "chromium: arcade pause survives confirmed restart",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "chromium: arcade pause survives lobby and fresh deployment",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "chromium: a pause received in the lobby applies to the next match",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: one tap opens and a second closes base",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: one tap opens and a second closes army",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: one tap opens and a second closes radar",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: one Order tap issues movement for selected army",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'select' !== 'order'\n"
+    },
+    {
+      "name": "webkit: touch mute toggles exactly once",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: minimap marker maps to HQ at 390px",
+      "status": "fail",
+      "error": "Error: Minimap blocked by duplicate tap"
+    },
+    {
+      "name": "webkit: minimap marker maps to HQ at 700px",
+      "status": "fail",
+      "error": "Error: Minimap blocked by duplicate tap"
+    },
+    {
+      "name": "webkit: construction clears visible Order state at 390px",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'select' !== 'order'\n"
+    },
+    {
+      "name": "webkit: construction clears visible Order state at 320px",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'select' !== 'order'\n"
+    },
+    {
+      "name": "webkit: native mouse and keyboard activation survive touch",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: Shift-right-click harvests then advances the queued field",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: First field not active: 279.67373659144073,481.46818533851666"
+    },
+    {
+      "name": "webkit: arcade pause survives confirmed restart",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: arcade pause survives lobby and fresh deployment",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "webkit: a pause received in the lobby applies to the next match",
+      "status": "fail",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "name": "No page errors or failed runtime resources",
+      "status": "pass"
+    }
+  ],
+  "observations": {
+    "harvesting": {
+      "time": 30.00000000000029,
+      "x": 463.944979264214,
+      "y": 235.1288147447173,
+      "cargo": 118.39999999999984,
+      "orders": [
+        {
+          "type": "harvest",
+          "target": 0,
+          "x": 210,
+          "y": 640
+        },
+        {
+          "type": "harvest",
+          "target": 1,
+          "x": 520,
+          "y": 210
+        }
+      ],
+      "harvestNode": 1
+    },
+    "chromiumClicks": [
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 352.2000000476837
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 356.5
+      },
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 451.2999999523163
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 453.7999999523163
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 534.7000000476837
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 538.7999999523163
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 618.7999999523163
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 621.5
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 686.1000001430511
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 688.7000000476837
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 768.9000000953674
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 770.7999999523163
+      },
+      {
+        "action": "select-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 853.7000000476837
+      },
+      {
+        "action": "select-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 857.2000000476837
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 936.7000000476837
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 939.2999999523163
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1052.4000000953674
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1054.7999999523163
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1135.6000001430511
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1136.9000000953674
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1202.4000000953674
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 1203.7000000476837
+      }
+    ],
+    "chromiumMinimap390": {
+      "map": {
+        "x": 49.666666666666686,
+        "y": 430,
+        "width": 290.66666666666663,
+        "height": 217.99999999999997,
+        "box": {
+          "x": 23,
+          "y": 429,
+          "width": 344,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 93.26666666666668,
+        "y": 477.23333333333335
+      },
+      "camera": {
+        "x": 490.232582979424,
+        "y": 394.63639692826706,
+        "zoom": 0.76
+      }
+    },
+    "chromiumMinimap700": {
+      "map": {
+        "x": 204.66666666666669,
+        "y": 430,
+        "width": 290.66666666666663,
+        "height": 217.99999999999997,
+        "box": {
+          "x": 23,
+          "y": 429,
+          "width": 654,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 248.26666666666668,
+        "y": 477.23333333333335
+      },
+      "camera": {
+        "x": 826.6666517345184,
+        "y": 394.63639692826706,
+        "zoom": 1
+      }
+    },
+    "chromiumOrder390": {
+      "mode": "select",
+      "pressed": "true"
+    },
+    "chromiumOrder320": {
+      "mode": "select",
+      "pressed": "true"
+    },
+    "chromiumHarvest8s": {
+      "id": 2,
+      "kind": "harvester",
+      "owner": 0,
+      "x": 460.05150733605194,
+      "y": 223.10637655975353,
+      "hp": 360,
+      "ready": 1,
+      "cargo": 35.328000000000024,
+      "orders": [
+        {
+          "type": "harvest",
+          "x": 210,
+          "y": 639.9999705854668,
+          "target": 0
+        },
+        {
+          "type": "harvest",
+          "x": 520,
+          "y": 210.00001470726656,
+          "target": 1
+        }
+      ]
+    },
+    "chromiumRestartPaused": {
+      "paused": false,
+      "time": 2.2665999999999977
+    },
+    "webkitClicks": [
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2181
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2189
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2384
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2388
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2514.0000000000005
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2517
+      },
+      {
+        "action": "select-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2682
+      },
+      {
+        "action": "select-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2686
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2804.0000000000005
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2807
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2987
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2988
+      }
+    ],
+    "webkitHarvest8s": {
+      "id": 2,
+      "kind": "harvester",
+      "owner": 0,
+      "x": 279.67373659144073,
+      "y": 481.46818533851666,
+      "hp": 360,
+      "ready": 1,
+      "cargo": 0,
+      "orders": [
+        {
+          "type": "harvest",
+          "x": 210,
+          "y": 639.277108433735,
+          "target": 0
+        },
+        {
+          "type": "harvest",
+          "x": 520,
+          "y": 209.15662650602408,
+          "target": 1
+        }
+      ]
+    },
+    "webkitRestartPaused": {
+      "paused": false,
+      "time": 1.5050000000000006
+    }
+  },
+  "errors": [],
+  "networkFailures": [],
+  "screenshots": [],
+  "exportHashes": {
+    "index.html": "653881456d057baabef0e500cfbb2ad93e7cf7416113faf1852faf7f465b5d6e",
+    "assets/index-WXo_PyN-.js": "6499d9d5112d62f400129135084626ce3562e357037da8b02ab61e1519a59808"
+  },
+  "finished": "2026-10-12T16:31:51.023Z",
+  "passed": 9,
+  "failed": 22
+}

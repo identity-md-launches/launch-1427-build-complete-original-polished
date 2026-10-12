@@ -1,8 +1,8 @@
 {
   "status": "pass",
   "budgetBytes": 8388608,
-  "totalBytes": 2008346,
-  "fileCount": 60,
+  "totalBytes": 2640228,
+  "fileCount": 79,
   "method": "Uncompressed intended submission files including this report; conservative payload estimate, not a generated Git pack. Git internals are not read or modified.",
   "excluded": [
     "Provided environment inputs: .git/, .imd/, .agents/, .aws/, .codex/",
@@ -16,12 +16,16 @@
       "bytes": 197
     },
     {
+      "path": ".imd-responses.json",
+      "bytes": 3649
+    },
+    {
       "path": "ART.md",
       "bytes": 2750
     },
     {
       "path": "DESIGN.md",
-      "bytes": 11642
+      "bytes": 12403
     },
     {
       "path": "dist/assets/commander.webp",
@@ -32,8 +36,8 @@
       "bytes": 4377
     },
     {
-      "path": "dist/assets/index-WXo_PyN-.js",
-      "bytes": 236899
+      "path": "dist/assets/index-D3jt6tTP.js",
+      "bytes": 237750
     },
     {
       "path": "dist/cover.jpg",
@@ -53,19 +57,19 @@
     },
     {
       "path": "evidence/briefing.jpg",
-      "bytes": 88702
+      "bytes": 68444
     },
     {
       "path": "evidence/browser-output.txt",
-      "bytes": 2422
+      "bytes": 2677
     },
     {
       "path": "evidence/browser-results.json",
-      "bytes": 4874
+      "bytes": 4876
     },
     {
       "path": "evidence/build.txt",
-      "bytes": 442
+      "bytes": 653
     },
     {
       "path": "evidence/contrast-measurements.json",
@@ -77,15 +81,15 @@
     },
     {
       "path": "evidence/desktop-battle.jpg",
-      "bytes": 114367
+      "bytes": 115979
     },
     {
       "path": "evidence/desktop-lobby.jpg",
-      "bytes": 162553
+      "bytes": 162764
     },
     {
       "path": "evidence/engine-tests.txt",
-      "bytes": 2195
+      "bytes": 2735
     },
     {
       "path": "evidence/export-check.txt",
@@ -101,31 +105,99 @@
     },
     {
       "path": "evidence/mobile-battle.jpg",
-      "bytes": 46741
+      "bytes": 29817
     },
     {
       "path": "evidence/mobile-lobby.jpg",
-      "bytes": 57427
+      "bytes": 58023
+    },
+    {
+      "path": "evidence/revision-after.json",
+      "bytes": 16254
+    },
+    {
+      "path": "evidence/revision-after.txt",
+      "bytes": 2335
+    },
+    {
+      "path": "evidence/revision-before.json",
+      "bytes": 14116
+    },
+    {
+      "path": "evidence/revision-before.txt",
+      "bytes": 3072
+    },
+    {
+      "path": "evidence/revision-chromium-host-paused.jpg",
+      "bytes": 37925
+    },
+    {
+      "path": "evidence/revision-chromium-minimap-320.jpg",
+      "bytes": 33271
+    },
+    {
+      "path": "evidence/revision-chromium-minimap-390.jpg",
+      "bytes": 35432
+    },
+    {
+      "path": "evidence/revision-chromium-minimap-700.jpg",
+      "bytes": 45680
+    },
+    {
+      "path": "evidence/revision-chromium-order-320.jpg",
+      "bytes": 34642
+    },
+    {
+      "path": "evidence/revision-chromium-order-390.jpg",
+      "bytes": 37900
+    },
+    {
+      "path": "evidence/revision-touch-hq.jpg",
+      "bytes": 40640
+    },
+    {
+      "path": "evidence/revision-webkit-host-paused.jpg",
+      "bytes": 95562
+    },
+    {
+      "path": "evidence/revision-webkit-minimap-320.jpg",
+      "bytes": 40482
+    },
+    {
+      "path": "evidence/revision-webkit-minimap-390.jpg",
+      "bytes": 43039
+    },
+    {
+      "path": "evidence/revision-webkit-minimap-700.jpg",
+      "bytes": 59871
+    },
+    {
+      "path": "evidence/revision-webkit-order-320.jpg",
+      "bytes": 42404
+    },
+    {
+      "path": "evidence/revision-webkit-order-390.jpg",
+      "bytes": 46325
     },
     {
       "path": "evidence/runtime-integrity.json",
-      "bytes": 1406
+      "bytes": 1570
     },
     {
       "path": "evidence/sandbox-defeat.jpg",
-      "bytes": 46632
+      "bytes": 46684
     },
     {
       "path": "evidence/submission-budget.json",
-      "bytes": 4887
+      "bytes": 6536
     },
     {
       "path": "evidence/typecheck.txt",
-      "bytes": 45
+      "bytes": 256
     },
     {
       "path": "evidence/victory.jpg",
-      "bytes": 52694
+      "bytes": 53281
     },
     {
       "path": "index.html",
@@ -145,7 +217,7 @@
     },
     {
       "path": "package.json",
-      "bytes": 627
+      "bytes": 675
     },
     {
       "path": "public/assets/commander.webp",
@@ -169,7 +241,7 @@
     },
     {
       "path": "README.md",
-      "bytes": 11492
+      "bytes": 12574
     },
     {
       "path": "scripts/check-export.mjs",
@@ -213,7 +285,7 @@
     },
     {
       "path": "src/game.ts",
-      "bytes": 40308
+      "bytes": 40800
     },
     {
       "path": "src/icons.ts",
@@ -221,7 +293,7 @@
     },
     {
       "path": "src/main.ts",
-      "bytes": 52364
+      "bytes": 54056
     },
     {
       "path": "src/render.ts",
@@ -237,7 +309,11 @@
     },
     {
       "path": "tests/engine.test.mjs",
-      "bytes": 10019
+      "bytes": 12975
+    },
+    {
+      "path": "tests/revision.mjs",
+      "bytes": 16734
     },
     {
       "path": "tsconfig.json",
@@ -245,7 +321,7 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 13256
+      "bytes": 19015
     },
     {
       "path": "vite.config.ts",

@@ -1,0 +1,715 @@
+{
+  "phase": "after",
+  "started": "2026-10-12T16:38:45.111Z",
+  "browsers": {
+    "chromium": "141.0.7390.37",
+    "webkit": "26.0"
+  },
+  "checks": [
+    {
+      "name": "Engine: queued field preserves the active harvesting cycle",
+      "status": "pass",
+      "detail": {
+        "time": 30.00000000000029,
+        "x": 471.8542364232455,
+        "y": 247.24797544762322,
+        "cargo": 110.39999999999986,
+        "orders": [],
+        "harvestNode": 1
+      }
+    },
+    {
+      "name": "chromium: one tap opens and a second closes base",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: one tap opens and a second closes army",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: one tap opens and a second closes radar",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: one Order tap issues movement for selected army",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: touch mute toggles exactly once",
+      "status": "pass"
+    },
+    {
+      "name": "Chromium: first panel tap after a native canvas drag works",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: minimap marker maps to HQ at 390px",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: minimap marker maps to HQ at 700px",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: minimap marker maps to HQ at 320px",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: construction clears visible Order state at 390px",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: construction clears visible Order state at 320px",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: native mouse and keyboard activation survive touch",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: Shift-right-click harvests then advances the queued field",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: arcade pause survives confirmed restart",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: arcade pause survives lobby and fresh deployment",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: a pause received in the lobby applies to the next match",
+      "status": "pass"
+    },
+    {
+      "name": "chromium: a resume received in the lobby releases the next match",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: one tap opens and a second closes base",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: one tap opens and a second closes army",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: one tap opens and a second closes radar",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: one Order tap issues movement for selected army",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: touch mute toggles exactly once",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: minimap marker maps to HQ at 390px",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: minimap marker maps to HQ at 700px",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: minimap marker maps to HQ at 320px",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: construction clears visible Order state at 390px",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: construction clears visible Order state at 320px",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: native mouse and keyboard activation survive touch",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: Shift-right-click harvests then advances the queued field",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: arcade pause survives confirmed restart",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: arcade pause survives lobby and fresh deployment",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: a pause received in the lobby applies to the next match",
+      "status": "pass"
+    },
+    {
+      "name": "webkit: a resume received in the lobby releases the next match",
+      "status": "pass"
+    },
+    {
+      "name": "No page errors or failed runtime resources",
+      "status": "pass"
+    }
+  ],
+  "observations": {
+    "harvesting": {
+      "time": 30.00000000000029,
+      "x": 471.8542364232455,
+      "y": 247.24797544762322,
+      "cargo": 110.39999999999986,
+      "orders": [],
+      "harvestNode": 1
+    },
+    "chromiumClicks": [
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 559.2000000476837
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 563.5
+      },
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 679.4000000953674
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 684.7999999523163
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 826.1000001430511
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 830.7999999523163
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 980.6000001430511
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 983.2999999523163
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1058.7999999523163
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1061
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1159.7999999523163
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 1161.9000000953674
+      },
+      {
+        "action": "select-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1241.9000000953674
+      },
+      {
+        "action": "select-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1245.2000000476837
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1309.2999999523163
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1311.7000000476837
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1444.5
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1447
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1527.2999999523163
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "touch",
+        "at": 1528.5
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1592.7000000476837
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 2,
+        "pointerType": "touch",
+        "at": 1593.9000000953674
+      }
+    ],
+    "chromiumMinimap390": {
+      "map": {
+        "x": 49.666666666666686,
+        "y": 430,
+        "width": 290.66666666666663,
+        "height": 217.99999999999997,
+        "box": {
+          "x": 23,
+          "y": 429,
+          "width": 344,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 93.26666666666668,
+        "y": 477.23333333333335
+      },
+      "camera": {
+        "x": 360.0000293976669,
+        "y": 390.00003359733375,
+        "zoom": 0.76
+      }
+    },
+    "chromiumMinimap700": {
+      "map": {
+        "x": 204.66666666666669,
+        "y": 430,
+        "width": 290.66666666666663,
+        "height": 217.99999999999997,
+        "box": {
+          "x": 23,
+          "y": 429,
+          "width": 654,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 248.26666666666668,
+        "y": 477.23333333333335
+      },
+      "camera": {
+        "x": 359.9999664026662,
+        "y": 390.00003359733375,
+        "zoom": 1
+      }
+    },
+    "chromiumMinimap320": {
+      "map": {
+        "x": 24,
+        "y": 437,
+        "width": 272,
+        "height": 204,
+        "box": {
+          "x": 23,
+          "y": 429,
+          "width": 274,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 64.8,
+        "y": 481.2
+      },
+      "camera": {
+        "x": 360.0000269272748,
+        "y": 390.00010770909927,
+        "zoom": 0.76
+      }
+    },
+    "chromiumOrder390": {
+      "mode": "select",
+      "pressed": "false"
+    },
+    "chromiumOrder320": {
+      "mode": "select",
+      "pressed": "false"
+    },
+    "chromiumHarvest8s": {
+      "id": 2,
+      "kind": "harvester",
+      "owner": 0,
+      "x": 217.16384754309382,
+      "y": 581.3613446222158,
+      "hp": 360,
+      "ready": 1,
+      "cargo": 140,
+      "orders": [
+        {
+          "type": "harvest",
+          "x": 210,
+          "y": 639.9999705854668,
+          "target": 0
+        },
+        {
+          "type": "harvest",
+          "x": 520,
+          "y": 210.00001470726656,
+          "target": 1
+        }
+      ],
+      "time": 8.048000000000005
+    },
+    "chromiumRestartPaused": {
+      "paused": true,
+      "time": 0
+    },
+    "webkitClicks": [
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1025
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 1033
+      },
+      {
+        "action": "mobile-base",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1299
+      },
+      {
+        "action": "mobile-base",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 1304
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1429
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 1433
+      },
+      {
+        "action": "mobile-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1629
+      },
+      {
+        "action": "mobile-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 1634.0000000000002
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 1841
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 1844
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2100
+      },
+      {
+        "action": "mobile-radar",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2103
+      },
+      {
+        "action": "select-army",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2306
+      },
+      {
+        "action": "select-army",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2310
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2513
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2515
+      },
+      {
+        "action": "order",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2702
+      },
+      {
+        "action": "order",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2704
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 2899
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 2901.0000000000005
+      },
+      {
+        "action": "sound",
+        "trusted": false,
+        "detail": 0,
+        "pointerType": "",
+        "at": 3100
+      },
+      {
+        "action": "sound",
+        "trusted": true,
+        "detail": 1,
+        "pointerType": "mouse",
+        "at": 3102
+      }
+    ],
+    "webkitMinimap390": {
+      "map": {
+        "x": 49.666666666666686,
+        "y": 429.984375,
+        "width": 290.66666666666663,
+        "height": 217.99999999999997,
+        "box": {
+          "x": 23,
+          "y": 428.984375,
+          "width": 344,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 93.26666666666668,
+        "y": 477.21770833333335
+      },
+      "camera": {
+        "x": 357.7981651376146,
+        "y": 388.2024082568808,
+        "zoom": 0.76
+      }
+    },
+    "webkitMinimap700": {
+      "map": {
+        "x": 204.66666666666669,
+        "y": 429.984375,
+        "width": 290.66666666666663,
+        "height": 217.99999999999997,
+        "box": {
+          "x": 23,
+          "y": 428.984375,
+          "width": 654,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 248.26666666666668,
+        "y": 477.21770833333335
+      },
+      "camera": {
+        "x": 357.7981651376146,
+        "y": 388.2024082568808,
+        "zoom": 1
+      }
+    },
+    "webkitMinimap320": {
+      "map": {
+        "x": 24,
+        "y": 436.984375,
+        "width": 272,
+        "height": 204,
+        "box": {
+          "x": 23,
+          "y": 428.984375,
+          "width": 274,
+          "height": 220
+        }
+      },
+      "tap": {
+        "x": 64.8,
+        "y": 481.184375
+      },
+      "camera": {
+        "x": 352.94117647058823,
+        "y": 388.37316176470586,
+        "zoom": 0.76
+      }
+    },
+    "webkitOrder390": {
+      "mode": "select",
+      "pressed": "false"
+    },
+    "webkitOrder320": {
+      "mode": "select",
+      "pressed": "false"
+    },
+    "webkitHarvest8s": {
+      "id": 2,
+      "kind": "harvester",
+      "owner": 0,
+      "x": 216.7345380172064,
+      "y": 567.9281251346116,
+      "hp": 360,
+      "ready": 1,
+      "cargo": 140,
+      "orders": [
+        {
+          "type": "harvest",
+          "x": 210,
+          "y": 639.277108433735,
+          "target": 0
+        },
+        {
+          "type": "harvest",
+          "x": 520,
+          "y": 209.15662650602408,
+          "target": 1
+        }
+      ],
+      "time": 8.224000000000006
+    },
+    "webkitRestartPaused": {
+      "paused": true,
+      "time": 0
+    }
+  },
+  "errors": [],
+  "networkFailures": [],
+  "screenshots": [
+    "evidence/revision-chromium-minimap-390.jpg",
+    "evidence/revision-chromium-minimap-700.jpg",
+    "evidence/revision-chromium-minimap-320.jpg",
+    "evidence/revision-chromium-order-390.jpg",
+    "evidence/revision-chromium-order-320.jpg",
+    "evidence/revision-chromium-host-paused.jpg",
+    "evidence/revision-webkit-minimap-390.jpg",
+    "evidence/revision-webkit-minimap-700.jpg",
+    "evidence/revision-webkit-minimap-320.jpg",
+    "evidence/revision-webkit-order-390.jpg",
+    "evidence/revision-webkit-order-320.jpg",
+    "evidence/revision-webkit-host-paused.jpg"
+  ],
+  "exportHashes": {
+    "index.html": "225ee0d9fc620b53105afdb0befa039d014a1c20cccc0988b9d2a346c1fc0e76",
+    "assets/index-D3jt6tTP.js": "7c77e370a380056e91d10d2127ddf7e696aed978eac890f6354fc4f44fd88d74"
+  },
+  "finished": "2026-10-12T16:39:57.601Z",
+  "passed": 35,
+  "failed": 0
+}

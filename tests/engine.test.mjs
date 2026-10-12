@@ -310,3 +310,82 @@ test("invalid or backward clock deltas never rewind or poison the simulation", (
     before,
   );
 });
+
+test("Shift-queued harvesting delivers the active field before switching fields", () => {
+  const g = fresh();
+  isolate(g);
+  const h = g.spawn("harvester", 0, 280, 480);
+  const first = g.resources[0], second = g.resources[1];
+  g.issue([h.id], { type: "harvest", target: first.id, ...first });
+  advance(g, 1);
+  const before = { node: h.harvestNode, path: structuredClone(h.path) };
+  g.issue([h.id], { type: "harvest", target: second.id, ...second }, true);
+  assert.equal(h.harvestNode, before.node);
+  assert.deepEqual(h.path, before.path);
+  advance(g, 5);
+  assert.equal(h.harvestNode, first.id);
+  assert.equal(second.amount, second.max);
+  assert.ok(h.cargo > 0);
+  assert.equal(h.orders.length, 2);
+  for (let i = 0; i < 800 && g.harvested === 0; i++) g.tick(0.05);
+  assert.equal(g.harvested, 140);
+  assert.equal(h.cargo, 0);
+  assert.deepEqual(h.orders.map(o => o.target), [second.id]);
+  g.tick(0.05);
+  assert.equal(h.harvestNode, second.id);
+  advance(g, 30);
+  assert.ok(second.amount < second.max);
+  assert.ok(g.harvested >= 280);
+  assert.equal(h.orders.length, 0);
+  const previous = g.harvested;
+  advance(g, 30);
+  assert.ok(g.harvested > previous, "Last field continues harvesting automatically");
+});
+
+test("a queued harvest only activates after an earlier movement order", () => {
+  const g = fresh();
+  isolate(g);
+  const h = g.spawn("harvester", 0, 530, 450);
+  h.harvestNode = 0;
+  g.issue([h.id], { type: "move", x: 680, y: 500 });
+  g.issue([h.id], { type: "harvest", target: 1, x: 520, y: 210 }, true);
+  advance(g, 1);
+  assert.equal(h.orders[0].type, "move");
+  assert.equal(h.harvestNode, 0);
+  advance(g, 6);
+  assert.equal(h.orders[0].type, "harvest");
+  assert.equal(h.harvestNode, 1);
+});
+
+test("a depleted field delivers its partial load before advancing queued orders", () => {
+  const g = fresh();
+  isolate(g);
+  const h = g.spawn("harvester", 0, 250, 600);
+  g.resources[0].amount = 24;
+  g.issue([h.id], { type: "harvest", target: 0, x: 210, y: 640 });
+  g.issue([h.id], { type: "move", x: 680, y: 500 }, true);
+  advance(g, 1);
+  assert.equal(h.cargo, 24);
+  assert.equal(h.orders[0].type, "harvest");
+  for (let i = 0; i < 800 && g.harvested === 0; i++) g.tick(0.05);
+  assert.equal(g.harvested, 24);
+  assert.equal(h.orders[0].type, "move");
+  assert.equal(h.cargo, 0);
+  for (let i = 0; i < 800 && h.orders.length; i++) g.tick(0.05);
+  assert.equal(h.orders.length, 0);
+  assert.ok(dist(h, { x: 680, y: 500 }) < 28);
+});
+
+test("an empty harvest field cannot trap a queued assignment", () => {
+  const g = fresh();
+  isolate(g);
+  const h = g.spawn("harvester", 0, 280, 480);
+  g.resources[0].amount = 0;
+  g.issue([h.id], { type: "harvest", target: 0, x: 210, y: 640 });
+  g.issue([h.id], { type: "harvest", target: 1, x: 520, y: 210 }, true);
+  advance(g, 0.1);
+  assert.equal(h.harvestNode, 1);
+  assert.deepEqual(h.orders.map(o => o.target), [1]);
+  advance(g, 30);
+  assert.ok(g.harvested > 0);
+});

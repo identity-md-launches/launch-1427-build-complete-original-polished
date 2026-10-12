@@ -1,8 +1,10 @@
 {
   "status": "pass",
-  "checkedAt": "2026-10-12T15:41:54.820Z",
-  "localDocumentationLinks": 38,
+  "checkedAt": "2026-10-12T16:46:54.780Z",
+  "localDocumentationLinks": 54,
   "lockfileDependenciesMatch": true,
+  "finalRevisionExportHashesMatch": true,
+  "unchangedArtAndManifest": true,
   "runtimeAssets": [
     {
       "path": "dist/assets/FONT-LICENSE.txt",
@@ -15,9 +17,9 @@
       "sha256": "b3d9776e82e0b293b1fdd1751466b9923e4e878d55af324063a8e487bd6ab0d1"
     },
     {
-      "path": "dist/assets/index-WXo_PyN-.js",
-      "bytes": 236899,
-      "sha256": "6499d9d5112d62f400129135084626ce3562e357037da8b02ab61e1519a59808"
+      "path": "dist/assets/index-D3jt6tTP.js",
+      "bytes": 237750,
+      "sha256": "7c77e370a380056e91d10d2127ddf7e696aed978eac890f6354fc4f44fd88d74"
     },
     {
       "path": "dist/cover.jpg",
@@ -32,7 +34,7 @@
     {
       "path": "dist/index.html",
       "bytes": 1078,
-      "sha256": "653881456d057baabef0e500cfbb2ad93e7cf7416113faf1852faf7f465b5d6e"
+      "sha256": "225ee0d9fc620b53105afdb0befa039d014a1c20cccc0988b9d2a346c1fc0e76"
     },
     {
       "path": "dist/pepe-game.json",
@@ -45,6 +47,7 @@
     "width": 1200,
     "height": 630,
     "format": "JPEG",
-    "verifiedWith": "Pillow Image.open"
+    "verifiedWith": "Pillow Image.open",
+    "verification": "Unchanged SHA-256; Pillow dimensions measured in original round"
   }
 }

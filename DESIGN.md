@@ -6,7 +6,7 @@ PEPEFRONT is a compact, single-player real-time strategy game for commanders on 
 
 The lobby uses cinematic composition. The battlefield uses dense, purposeful command chrome around a Canvas 2D map. These are distinct layouts sharing typography, colors, icon strokes, and action states. The art is original; the generated commander still is documented in [ART.md](ART.md).
 
-Touch controls activate stationary pointer releases once and discard duplicate compatibility clicks after a drag. This preserves native keyboard activation while making the post-drag tap reliable.
+Touch controls activate stationary pointer releases once and deduplicate the handled button/gesture, including when a dialog replaces its button. Compatibility-click pointer types differ across engines, so they do not determine deduplication. Each fresh pointerdown starts a new gesture; mouse and native keyboard activation remain available. This keeps the first tap after a battlefield drag reliable in Chromium and prevents double activation in WebKit.
 
 Source of truth: [`src/style.css`](src/style.css), [`src/main.ts`](src/main.ts), [`src/render.ts`](src/render.ts), and [`src/icons.ts`](src/icons.ts). This document describes the implemented system, not proposed future variants.
 
@@ -57,7 +57,7 @@ Lobby: maximum width 1600px, shared 4% horizontal gutters, 78px header, cinemati
 
 Game: `100dvh` shell with a 320px minimum height, 70px header, flexible battlefield plus a 278px command panel, and a 104px bottom command bar. At 720px and below, the game uses a 61px header, 105px selection/order bar, and a 52px bottom panel selector. Production/minimap panels open above these stable controls and scroll internally at a maximum 68dvh. Safe-area bottom padding is included.
 
-The desktop minimap stays on the lower-left battlefield, independent of sidebar height. `relocateRadar()` in `src/main.ts` moves the same accessible canvas into the touch panel when the breakpoint changes. At heights of 600px or less and widths above 720px, camera buttons form a horizontal row left of the uplinks, the minimap shrinks to 150px, and secondary details hide while primary commands remain usable. The map camera uses a slight vertical compression for miniature depth; pointer projection uses the matching inverse transform.
+The desktop minimap stays on the lower-left battlefield, independent of sidebar height. `relocateRadar()` in `src/main.ts` moves the same accessible canvas into the touch panel when the breakpoint changes. At heights of 600px or less and widths above 720px, camera buttons form a horizontal row left of the uplinks, the minimap shrinks to 150px, and secondary details hide while primary commands remain usable. The map camera uses a slight vertical compression for miniature depth; pointer projection uses the matching inverse transform. Minimap input uses the fitted image rectangle, excluding its one-pixel border and centered `object-fit: contain` gutters on touch. The established 220px touch map height and desktop fill layout remain unchanged.
 
 Observed review widths and exact checks are listed in [VALIDATION.md](VALIDATION.md). Narrow-viewport reflow is not represented as native browser 200% zoom.
 
@@ -87,9 +87,9 @@ Original icons in `src/icons.ts` share a 24px viewBox, a 1.7px stroke and `curre
 | `.build-card` / `renderCards()` | Canvas-generated local miniature preview, job/structure name, cost, build time, hotkey and prerequisite. `aria-disabled` retains discoverability; attempting a locked action reports how to unlock it. Costs and time appear in the accessible name; requirement text is referenced with `aria-describedby`. |
 | `.queue-item` / `updateHUD()` | Cancel/refund action, visible remaining time and progress. Progress updates retain the button node instead of replacing focus every frame. |
 | `.radar` / `Renderer.drawMini()` | Fog-aware tactical map. Pointer/touch jumps, arrow-key panning, camera rectangle, ownership markers and descriptive name. Updated at a lower cadence than the battlefield. |
-| `.command-bar` | Current selection, job/health/rank detail, Select army, Order, Stop, last-alert jump and sector signal (a compact map-footer counter on smaller screens). |
+| `.command-bar` | Current selection, job/health/rank detail, Select army, Order, Stop, last-alert jump and sector signal (a compact map-footer counter on smaller screens). `setCommandMode()` keeps Order's `aria-pressed`, appearance and status message aligned with the next battlefield tap; choosing construction returns to selection. |
 | `.lesson`, `.battle-log` | Contextual opening steps and a stable polite status region. Events remain visible until replaced; hiding onboarding is a separate labeled action. |
-| Native `dialog` / `showDialog()` | Briefing, manual, pause, leave/restart confirmation and final results. Browser focus containment; explicit focus return; Escape closes/returns according to the active state. |
+| Native `dialog` / `showDialog()` | Briefing, manual, pause, leave/restart confirmation and final results. Browser focus containment; explicit focus return; Escape closes/returns according to the active state. An arcade-owned pause persists through restart and lobby transitions; Resume remains disabled until the matching parent resume. |
 
 High-frequency UI transitions are 100–150ms. The primary/faction press scale is 0.96 only when reduced motion is not requested. Reduced motion disables the recording indicator animation, moving searchlights, rain/haze motion, crystal motion and particles; essential unit movement, shots and static selection feedback remain. Pause stops the simulation and its decorative game clock. Mute remains reachable in desktop and touch HUDs; sound starts only after a user gesture.
 
